@@ -2,9 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Contracts\Repositories\RoleRepositoryInterface;
 use App\Models\Role;
 
-class RoleRepository extends Repository
+class RoleRepository extends Repository implements RoleRepositoryInterface
 {
     public function __construct(Role $model)
     {
@@ -12,4 +13,7 @@ class RoleRepository extends Repository
     }
 
 
+    public function findByRole(string $role){
+        $this->model->firstWhere('role', '=', $role);
+    }
 }

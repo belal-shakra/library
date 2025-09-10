@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts;
+namespace App\Contracts\Repositories;
 
 interface BookRepositoryInterface extends RepositoryInterface
 {
